@@ -1,0 +1,805 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --background-color: #f3f4f6;
+    --card-background: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+    background-color: var(--card-background);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+}
+
+.card-header h2 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Formulario */
+.form-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input-group-text {
+    border-radius: 5px 0 0 5px;
+}
+
+.input-group .form-control:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group .form-control:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Botones */
+.btn {
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-sm {
+    border-radius: var(--border-radius-sm);
+    padding: 0.5rem 1rem;
+}
+
+.btn-lg {
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* Estados */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-badge i {
+    margin-right: 0.375rem;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-overdue {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Tabla */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    width: 100%;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: #495057;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table th:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+
+.table th:last-child {
+    border-top-right-radius: var(--border-radius);
+}
+
+.table tbody tr {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.table tbody tr td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+.table tbody tr td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.table tbody tr td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Botones de acción */
+.btn-action {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    margin: 0 2px;
+}
+
+.btn-action i {
+    font-size: 1rem;
+}
+
+.btn-action.btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-action.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.btn-action.btn-outline-info {
+    color: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+.btn-action.btn-outline-info:hover {
+    background-color: #0dcaf0;
+    color: white;
+}
+
+.btn-action.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-action.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Ajustar el color de los iconos en los diferentes estados */
+.new-expense .btn-action.btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.new-expense .btn-action.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.pending-expense .btn-action.btn-outline-primary {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.pending-expense .btn-action.btn-outline-primary:hover {
+    background-color: #ffc107;
+    color: white;
+}
+
+.overdue-expense .btn-action.btn-outline-primary {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.overdue-expense .btn-action.btn-outline-primary:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.paid-expense .btn-action.btn-outline-primary {
+    color: #198754;
+    border-color: #198754;
+}
+
+.paid-expense .btn-action.btn-outline-primary:hover {
+    background-color: #198754;
+    color: white;
+}
+
+/* Ajustar el tamaño y espaciado de los iconos */
+.btn-action i.bi {
+    font-size: 1.1rem;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Ajustar el hover de los botones */
+.btn-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas de totales */
+.card.bg-light {
+    background-color: #f8f9fa !important;
+    border-radius: var(--border-radius);
+    background: linear-gradient(145deg, #f8f9fa, #ffffff) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card.bg-light .card-title {
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card.bg-light .card-text {
+    margin-bottom: 0;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.table tbody tr {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        margin: 0 -1rem;
+    }
+    
+    .btn-group {
+        display: flex;
+        width: 100%;
+    }
+    
+    .btn-group .btn {
+        flex: 1;
+    }
+}
+
+/* Estilos de los mensajes de error */
+.invalid-feedback {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Estilos del encabezado */
+header {
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+header h1 i {
+    margin-right: 0.5rem;
+}
+
+/* Estilos de los botones de ordenamiento */
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #dee2e6;
+}
+
+.btn-outline-secondary:hover {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Estilos de los inputs de fecha */
+input[type="date"] {
+    cursor: pointer;
+}
+
+/* Estilos de los select */
+.form-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
+}
+
+/* Estilos de los tooltips */
+[data-bs-toggle="tooltip"] {
+    cursor: help;
+}
+
+/* Estilos de los mensajes de validación */
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid {
+    border-color: #198754;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Estilos de las notificaciones */
+#notifications {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+    max-width: 350px;
+}
+
+.alert {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 0.75rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Estilos del modal */
+.modal-content {
+    border-radius: var(--border-radius-lg);
+    border: none;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #f8f9fa;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+/* Estilos para las alertas de deudas */
+.debt-alert {
+    animation: slideIn 0.5s ease-out;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.debt-alert .btn-close {
+    opacity: 0.5;
+    transition: all 0.2s ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.debt-alert .btn-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.debt-alert ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+.debt-alert li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius-sm);
+}
+
+.debt-alert li:last-child {
+    margin-bottom: 0;
+}
+
+.debt-alert small {
+    font-size: 0.875rem;
+}
+
+.debt-alert i {
+    margin-right: 0.25rem;
+}
+
+/* Estilos para alertas de gastos próximos a vencer */
+.alert-warning.debt-alert {
+    border-left: 6px solid var(--warning-color);
+    background: linear-gradient(135deg, 
+        rgba(245, 158, 11, 0.1),
+        rgba(245, 158, 11, 0.05));
+}
+
+.alert-warning.debt-alert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(245, 158, 11, 0.15) 0%,
+        rgba(245, 158, 11, 0.05) 50%,
+        rgba(245, 158, 11, 0.15) 100%);
+    animation: shimmer 2s infinite;
+}
+
+.debt-alert .bi-exclamation-triangle-fill {
+    animation: pulse 2s infinite;
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+    color: var(--warning-color);
+    filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.3));
+}
+
+.debt-alert strong {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: var(--warning-color);
+}
+
+.debt-alert p {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    padding-left: 2.25rem;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#debtAlerts {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    padding: 1rem;
+    backdrop-filter: blur(8px);
+    box-shadow: none;
+    border-bottom: none;
+}
+
+/* Grupos de botones */
+.btn-group {
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: var(--border-radius-sm);
+    border-bottom-left-radius: var(--border-radius-sm);
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: var(--border-radius-sm);
+    border-bottom-right-radius: var(--border-radius-sm);
+}
+
+/* Estilos para los estados de los gastos */
+.new-expense {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    border-left: 4px solid #dc3545 !important;
+}
+
+.pending-expense {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    border-left: 4px solid #dc3545 !important;
+}
+
+.overdue-expense {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    border-left: 4px solid #dc3545 !important;
+}
+
+.paid-expense {
+    background-color: rgba(25, 135, 84, 0.15) !important;
+    border-left: 4px solid #198754 !important;
+}
+
+/* Asegurar que los colores se apliquen a toda la fila */
+.new-expense td,
+.pending-expense td,
+.overdue-expense td,
+.paid-expense td {
+    background-color: inherit !important;
+    color: #212529 !important;
+}
+
+/* Ajustar el hover para mantener la consistencia */
+.new-expense:hover,
+.pending-expense:hover,
+.overdue-expense:hover,
+.paid-expense:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+/* Asegurar que los botones mantengan su estilo */
+.new-expense .btn,
+.pending-expense .btn,
+.overdue-expense .btn,
+.paid-expense .btn {
+    background-color: transparent !important;
+}
+
+/* Ajustar el color del texto en los botones para mantener el contraste */
+.new-expense .btn-outline-primary,
+.new-expense .btn-outline-info,
+.new-expense .btn-outline-danger {
+    color: #dc3545 !important;
+}
+
+.pending-expense .btn-outline-primary,
+.pending-expense .btn-outline-info,
+.pending-expense .btn-outline-danger {
+    color: #dc3545 !important;
+}
+
+.overdue-expense .btn-outline-primary,
+.overdue-expense .btn-outline-info,
+.overdue-expense .btn-outline-danger {
+    color: #dc3545 !important;
+}
+
+.paid-expense .btn-outline-primary,
+.paid-expense .btn-outline-info,
+.paid-expense .btn-outline-danger {
+    color: #198754 !important;
+}
+
+/* Ajustar el hover de los botones */
+.new-expense .btn:hover,
+.pending-expense .btn:hover,
+.overdue-expense .btn:hover,
+.paid-expense .btn:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ajustar el color del texto en el hover */
+.new-expense .btn:hover {
+    color: #b02a37 !important;
+}
+
+.pending-expense .btn:hover {
+    color: #b02a37 !important;
+}
+
+.overdue-expense .btn:hover {
+    color: #b02a37 !important;
+}
+
+.paid-expense .btn:hover {
+    color: #146c43 !important;
+}
+
+/* Ajustar el espaciado del contenedor de la tabla */
+.table-container {
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Ajustar el estilo del encabezado de la tabla */
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Ajustar el estilo cuando no hay gastos */
+.table tbody tr td[colspan="4"] {
+    padding: 24px;
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Estilos para el filtro por colores */
+.color-filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.color-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--bg-secondary);
+}
+
+.color-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.color-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.color-preview {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.color-option span {
+    font-weight: 500;
+}
+
+/* Estilos para los botones de filtro */
+.btn-group .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-group .btn i {
+    font-size: 1.1rem;
+} 
